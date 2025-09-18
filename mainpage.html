@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EthOS | University of Guelph</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.4;
+      background: #fff;
+      color: #111;
+    }
+
+    /* Header */
+    header {
+      background: #C20430;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { height: 50px; padding: 2px; border-radius: 4px; }
+    .title { font-weight: bold; margin-left: 12px; }
+    nav a { color: white; margin-left: 20px; font-weight: bold; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+
+    /* Banner */
+    .banner {
+      position: relative;
+      height: 300px;
+      background: #111;
+    }
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .banner-text {
+      position: absolute;
+      left: 20px;
+      bottom: 0;
+      background: #FFC72A;
+      color: #111;
+      padding: 14px 40px;
+      font-size: 25px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* --- NEW LAYOUT --- */
+    main{ max-width: none; margin-top: 0; padding: 0; }
+
+.content-grid{
+  max-width: 1400px; /* or larger, even 100% */
+  margin: 20px auto 0;
+  padding: 0 20px; /* keep some padding so it doesn’t touch screen edges */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+    .card{
+      background: #ffffff;
+      border: 0px solid #eee;
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    /* Login */
+    .login-card h1{
+      font-size: 28px;
+      margin: 0 0 6px;
+      color: #C20430;
+      font-weight: 700;
+    }
+    .login-card .subtitle{
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .sso-note{
+      background: linear-gradient(135deg, #fdf8e5 0%, #fff9e6 100%);
+      border: 1px solid #FFC72A;
+      border-radius: 1px;
+      padding: 10px 14px;
+      margin: 14px 0;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .btn {
+      background: #C20430;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 1px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      display: inline-block;
+      margin-top: 8px;
+      transition: all 0.3s ease; 
+      cursor: pointer; 
+      border: none; 
+
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #a0032a;
+      box-shadow: 0 6px 20px rgba(194, 4, 48, 0.4);
+    }
+
+    /* Webinars box uses same .card */
+    .announcements.card p{ margin: 30 0 12px;}
+    .announcements strong { color: #C20430; }
+
+    /* Help bar spans both columns */
+    .help-bar{
+      grid-column: 1 / -1;
+      background: #f7f7f7;
+      border: 1px solid #fffbfb;
+      border-radius: 1px;
+      padding: 18px;
+    }
+
+    .help-grid{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .help-item{
+      background: #fff;
+      border: 1px solid #eee;
+      border-left: 4px solid #C20430;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    .help-item strong{
+      color: #C20430;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .help-item a{
+      color: #C20430;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .help-item a:hover{ text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      color: #666;
+    }
+    footer a { color: #C20430; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Mobile */
+    @media (max-width: 900px){
+      header { flex-direction: column; text-align: center; }
+      nav { margin-top: 10px; }
+      nav a { margin: 0 10px; }
+      .banner { height: 200px; }
+      .banner-text{
+        left: 10px;
+        right: 10px;
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+
+      .content-grid{ grid-template-columns: 1fr; }
+      .help-grid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="https://raw.githubusercontent.com/Nayyab24/EthOS-Assets/main/LogoDesign.png" alt="University of Guelph logo" class="logo">
+      <div class="title">EthOS — Research Services</div>
+    </div>
+    <nav>
+      <a href="https://www.uoguelph.ca/research/for-researchers/raims/ethos/user-guides">Guidelines</a>
+      <a href="https://www.uoguelph.ca/research/services-divisions/ethics/faqs">FAQs</a>
+      <a href="#">Log in</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="https://raw.githubusercontent.com/Nayyab24/EthOS-Assets/main/images.webp" alt="University of Guelph campus">
+    <div class="banner-text">Research Ethics Online System</div>
+  </section>
+
+  <main>
+    <div class="content-grid">
+      <!-- Left: Login -->
+      <section class="login-card card">
+        <h1>EthOS Applicant Login</h1>
+        <p class="subtitle">University of Guelph Research Ethics Online System</p>
+
+        <div class="sso-note">For U of G Single Sign On click the blue button below</div>
+        <a class="btn" href ="https://login.microsoftonline.com/be62a12b-2cad-49a1-a5fa-85f4f3156a7d/saml2?SAMLRequest=tZJBb6MwEIX%2fCvLdgAkQsJJISatqK3W1UcP20Es0GNNaBZv1m
+        O7uv19D2mx3D7lV8sUz86z3vfEKoe8Gvh3ds76XP0aJLvjVdxr51FiT0WpuABVyDb1E7gQ%2fbL%2fe8SSMOSBK65TRJLi9XpNjmQsWs1zSOC4ymrK6oXW
+        ZN7SAPJNlXhaQMhI8SItesyb%2bCS9EHOWtRgfa%2bVKcZDQuKSsqtuCJPyxki7hcLtNHElx7c0qDm9XPzg3Io6gzT0qHvRLWoGmd0Z3SMhSmj2qZJ
+        8CSmiYCGpqWwChkLdAia9N2wbIclk00USYkuDFWyDmENWmhQzk523tA9SrPlb01zgjT7ZRulH66HE59GkL%2bpar2dP%2ftUJFg%2bx7YldE49tIepH1VQn6%2fv%2fsLNL
+        4M1jTCKgTvJ6wTcUKckP7rGX3mntu75OrItscHdqzsiO7Gelc%2fjX3ZAcqZdIgQTXTem3izQT6sfLiMNbxlQDaraZrP%2b7NTfj24y9KpohrazqNcaqfcb7L5ZOxV9MHm5nT797tv%2fgA%3d&RelayState=State
+        Properties%3deyJUSUQiOiI5OGE4YjEwMC04MzJkLTQ2YWUtYmJhYS03NTY4YWI4ZDNhMDMifQ&SigAlg=http%3a%2f%2fwww.w3.org%2f2001%2f04%2fxmldsig-more%23rsa-sha256&Signature=YiFQKRv
+        j82LXM8pFimOKaAofx0dNAdcDSPcJto2B6ARt795ebMi53fgezhvrvnigZRug7KZVEYo3qVqz9gpeY4QCjeFJBP%2fn0Z4BsKU%2bUnJTT4na6MDFZIc%2fKl0a7DJAPOXhwWjEwvQSY5TrPATOlDl1CWGuzzKiw7bIas
+        VukXXgLEG%2ffPA01Spa004gExTR2O14FBA0M1hS3369gAKfixyxQ2BKiZhWw756GICJ3rt4BfkT9dhG7QcxC2XkLNjMN8YXxAglCiqmZHBsOZIdUtnKzTXjNFz5tW6Jy5Y2OmNwr9onnDQQs7bejn4Tqk5Om6VA4awNHwrF
+        ZhMkDD8%2f%2fw%3d%3d" > UofG Central Login</a>
+      </section>
+
+      <!-- Right: Webinars -->
+      <aside class="announcements card">
+        <p><strong>Upcoming Webinars!</strong> Visit the
+          <a href="/research/for-researchers/raims/ethos/webinars" style="color:#C20430;">Webinar</a>
+          page for EthOS virtual 'lunch and learn' training opportunities in September and October.</p>
+
+        <p>A <strong>Form Update</strong> was released on August 20, 2025 as per a
+          <a href="https://www.uoguelph.ca/research/alerts/content/ethos-form-update-coming-august-20-2025" style="color:#C20430;">Research Alert</a>.
+          Applicants will see a red banner message indicating that your form must be updated. See the
+          <a href="/research/for-researchers/raims/ethos/user-guides/basic-navigation#nav-msg" style="color:#C20430;">Form Update Message training materials</a>
+          or contact <a href="mailto:RAIMSsupport@uoguelph.ca" style="color:#C20430;">RAIMSsupport@uoguelph.ca</a> if you have any questions.
+        </p>
+      </aside>
+
+      <!-- Full-width Help Bar -->
+      <section class="help-bar">
+        <div class="help-grid">
+          <div class="help-item">
+            <strong>First time using EthOS?</strong>
+            Check out our <a href="https://www.uoguelph.ca/research/for-researchers/raims/ethos/user-guides">Guidelines</a>
+            to understand the research ethics review process and requirements.
+          </div>
+
+          <div class="help-item">
+            <strong>Stuck on something?</strong>
+            Visit our <a href="https://www.uoguelph.ca/research/services-divisions/ethics/faqs">FAQs</a> for answers to common questions.
+          </div>
+
+          <div class="help-item">
+            <strong>Need help or having issues?</strong>
+            Contact <a href="https://www.uoguelph.ca/research/for-researchers/raims/ethos/help-support">RAIMS Support</a>
+            for personalized assistance with your application.
+          </div>
+
+          <div class="help-item">
+            <strong>Weekly Drop-ins Available</strong>
+            Join our <a href="/research/for-researchers/interactive-support-sessions">Tuesday lunch-hour sessions</a>.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 University of Guelph · <a href="#privacy">Privacy</a>
+  </footer>
+</body>
+</html>
